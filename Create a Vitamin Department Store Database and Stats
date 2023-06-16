@@ -1,0 +1,34 @@
+--Create a Vitamin Department Store Database
+
+CREATE TABLE Store (id INTEGER PRIMARY KEY,item TEXT, popularity INTEGER, quantity INTEGER, price INTEGER);
+
+INSERT INTO Store VALUES 
+(1, 'Chocolate Protein Powder',90,40, 29.99),
+(2, 'Vanilla Protein Powder', 70,31,27.99),
+(3, 'Strawberry Protein Powder',97,61,32.99),
+(4, 'Creatine Powder',100,70,14.99),
+(5, 'BCAA Capsules' ,80,45,7.99),
+(6, 'L Glutamine Capsules',74,32,7.48),
+(7, 'BlueBerry Pre-Workout Powder',91,62,24.99),
+(8, 'RazzBerry Pre-Workout Powder',84,40,22.99),
+(9, "Men's Multi-Vitamin",92,71,13.99),
+(10, "Women's Multi-Vitamin",91,68,13.99),
+(11, 'Vitamin D3 Capsules',86,43,4.99),
+(12, 'Nutritional Oats Packets',99,35,2.99),
+(13, 'Fish Oil Capsules',76,52, 11.99),
+(14, 'Zinc Capsules',63,47, 5.99),
+(15, 'Caramel Protein Shakes',94,65, 37.99);
+
+--Display the database ordered by price.
+SELECT * FROM Store
+ORDER BY price desc;
+
+--What are the 5 most popular items?
+SELECT item, price, popularity FROM store
+ORDER BY popularity desc
+LIMIT 5;
+
+--What is the average price of protien powders?
+SELECT AVG(price) "Average Protein Powder Price"
+From Store
+WHERE id BETWEEN 1 AND 3;
